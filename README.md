@@ -1,6 +1,6 @@
 <img align="right" width="150" height="150" top="100" src="./assets/breakage.png">
 
-# huff-breakage • [![ci](https://github.com/huff-language/huff-breakage/actions/workflows/ci.yaml/badge.svg)](https://github.com/huff-language/huff-breakage/actions/workflows/ci.yaml) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![Solidity](https://img.shields.io/badge/solidity-%3E%3D%200.8.13-lightgrey)
+# huff-breakage • [![ci](https://github.com/huff-language/huff-breakage/actions/workflows/ci.yaml/badge.svg)](https://github.com/huff-language/huff-breakage/actions/workflows/ci.yaml) [![license](https://img.shields.io/badge/License-Apache_2.0-blue.svg?label=license)](https://opensource.org/licenses/Apache-2.0) ![solidity](https://img.shields.io/badge/solidity-%3E%3D%200.8.13-lightgrey)
 
 A set of **Incorrect**, **Breaking**, and **Footgunned** [Huff](https://github.com/huff-language) Contracts.
 
@@ -41,26 +41,37 @@ src
 
 ## Examples
 
+
 <details>
 <summary>Invalid Macro Invocation</summary>
 <br />
 On line 10 of <a href="./src/InvalidMacroInvocation.huff">InvalidMacroInvocation.huff</a>, we invoke a macro called <code>UNKNOWN</code>, but it doesn't exist in either the <code>InvalidMacroInvocation</code> Huff contract or any of its imports (there are none in this simple example).
-
+<br />
 Thus, the compiler will generate an error message like so when compiling the contract:
 <p align="center">
 <img height="300px" style="display: block; margin: 0 auto" src="./assets/invalidmacroinvocation.png">
 </p>
 </details>
 
+
 <details>
 <summary>Invalid Macro Statement</summary>
 <br />
 On line 11 of <a href="./src/InvalidMacroStatement.huff">InvalidMacroStatement.huff</a>, we make a call to the <code>FREE_STORAGE_POINTER()</code> keyword which is invalid within the context of a macro.
-
+<br />
 Thus, the compiler will generate an error message like so when compiling the contract:
-
 <p align="center">
 <img height="300px" style="display: block; margin: 0 auto" src="./assets/invalidmacrostatement.png">
+</p>
+</details>
+
+
+<details>
+<summary>Missing Constant Definition</summary>
+<br />
+On line 10 of <a href="./src/MissingConstantDef.huff">MissingConstantDef.huff</a>, the constant <code>[UNKNOWN_CONSTANT_DEFINITION]</code> is referenced (the brackets notate the item's location will be pushed to the stack) but there is no <code>UNKNOWN_CONSTANT_DEFINITION</code> definition present in the contract. This will generate an error message similar to below during compilation.
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/missingconstantdef.png">
 </p>
 </details>
 
