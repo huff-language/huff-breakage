@@ -102,7 +102,7 @@ On line 6 of <a href="./src/TableBuiltins.huff">TableBuiltins.huff</a>, the buil
 <br />
 On line 16 of <a href="./src/UnmatchedJumpLabel.huff">UnmatchedJumpLabel.huff</a>, the jump label <code>err</code> is referenced but there is no matching label definition. This will generate the following <code>Unmatched Jump Label</code> error:
 <p align="center">
-<img height="300px" style="display: block; margin: 0 auto" src="./assets/unmatchedjumplabel.png">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/unmatchedjumplabels.png">
 </p>
 </details>
 
