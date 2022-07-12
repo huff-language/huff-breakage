@@ -27,9 +27,16 @@ Error: Missing Macro Definition For Invocation: "UNKNOWN"
 
 ## Contracts
 
+_NOTE: Some of the below contracts compile correctly and have a `[COMPILES]` postfix_
+
 ```ml
 src
-├─ InvalidMacroInvocation — An invocation to a macro that doesn't exist
+├─ InvalidMacroInvocation — An invocation of a macro that doesn't exist
+├─ InvalidMacroStatement — An invalid statement in a macro definition
+├─ MissingConstantDef — A constant definition is missing
+├─ MissingConstructor — A constructor macro definition is missing [COMPILES]
+├─ TableBuiltins — Table Builtins created on deployment [COMPILES]
+├─ UnmatchedJumpLabel — A jump label that has no matching label definition
 ```
 
 ## Examples
@@ -42,7 +49,16 @@ On line 10 of [InvalidMacroInvocation.huff](./src/InvalidMacroInvocation.huff), 
 Thus, the compiler will generate an error message like so when compiling the contract:
 
 <img src="./assets/invalidmacroinvocation.png">
+</details>
 
+<details>
+<summary>Invalid Macro Statement</summary>
+
+On line 11 of [InvalidMacroStatement.huff](./src/InvalidMacroStatement.huff), we make a call to the `FREE_STORAGE_POINTER()` keyword which is invalid within the context of a macro.
+
+Thus, the compiler will generate an error message like so when compiling the contract:
+
+<img src="./assets/invalidmacrostatement.png">
 </details>
 
 

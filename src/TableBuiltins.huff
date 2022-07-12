@@ -1,0 +1,27 @@
+/// @title Table Builtins
+/// @author Andreas Bigger <https://github.com/abigger87>
+/// @notice Table Builtins should compile!
+
+#define jumptable__packed PACKED_JUMPTABLE {
+    lab_0 lab_1 lab_2 lab_3
+}
+
+#define jumptable STANDARD_JUMPTABLE {
+    lab_0 // 0 00000
+    lab_1 // 1 00001
+    lab_2 // 2 00010
+    lab_3 // 3 00011
+}
+
+#define macro TEST_INIT_JUMP_TABLE() = takes(0) returns(1) {
+    __tablesize(STANDARD_JUMPTABLE) __tablestart(STANDARD_JUMPTABLE) 0x00 codecopy
+}
+
+#define macro BUILTIN_TEST() = takes(0) returns(1) {
+    __tablesize(PACKED_JUMPTABLE)
+}
+
+// Create the inlined jumptable
+#define macro CONSTRUCTOR() = takes(0) returns (0) {
+    BUILTIN_TEST()
+}

@@ -1,0 +1,9 @@
+/// @title Missing Constructor
+/// @author Andreas Bigger <https://github.com/abigger87>
+/// @notice Constructor Definitions are not required, so this contract should compile fine!
+
+// The main entrypoint of the contract
+#define macro MAIN() = takes(0) returns (0) {
+    caller 0x00 mstore
+    0x20 0x00 return
+}

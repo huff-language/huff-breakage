@@ -1,0 +1,17 @@
+/// @title Invalid Macro Statement
+/// @author Andreas Bigger <https://github.com/abigger87>
+/// @notice This contract demonstrates an error when a macro contains an invalid statement.
+
+// Constructor definition for demonstrative purposes (not required to compile)
+#define macro CONSTRUCTOR() = takes(0) returns (0) {}
+
+// The Macro containing an invalid statement
+#define macro MACRO() = takes(0) returns (0) {
+    // This is an invalid statement for inside a macro
+    FREE_STORAGE_POINTER()
+}
+
+// The main entrypoint of the contract
+#define macro MAIN() = takes(0) returns (0) {
+    MACRO()
+}
