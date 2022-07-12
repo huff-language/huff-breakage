@@ -39,7 +39,7 @@ src
 ├─ UnmatchedJumpLabel — A jump label that has no matching label definition
 ```
 
-## Examples
+## Explanations
 
 _NOTE: Some of the below contracts compile correctly and thus have a `[COMPILES]` postfix_
 
