@@ -17,7 +17,11 @@ huffup
 
 Then, compile a given contract to view the error message. For example, to view an invalid macro invocation error, run `huffc -b ./src/InvalidMacroInvocation.huff`, which will produce output similar to:
 ```bash
-
+Error: Missing Macro Definition For Invocation: "UNKNOWN"
+-> src/InvalidMacroInvocation.huff:468-477
+       |
+  > 10 |     UNKNOWN()
+       |
 ```
 
 
@@ -27,6 +31,19 @@ Then, compile a given contract to view the error message. For example, to view a
 src
 ├─ InvalidMacroInvocation — An invocation to a macro that doesn't exist
 ```
+
+## Examples
+
+<details>
+<summary>Invalid Macro Invocation</summary>
+
+On line 10 of [InvalidMacroInvocation.huff](./src/InvalidMacroInvocation.huff), we invoke a macro called `UNKNOWN`, but it doesn't exist in either the `InvalidMacroInvocation` Huff contract or any of its imports (there are none in this simple example).
+
+Thus, the compiler will generate an error message like so when compiling the contract:
+
+<img src="./assets/invalidmacroinvocation.png">
+
+</details>
 
 
 ## Safety Notice
