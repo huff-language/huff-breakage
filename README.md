@@ -44,7 +44,7 @@ src
 <details>
 <summary>Invalid Macro Invocation</summary>
 <br />
-On line 10 of <a href="./src/InvalidMacroInvocation.huff">InvalidMacroInvocation.huff</a>, we invoke a macro called `UNKNOWN`, but it doesn't exist in either the `InvalidMacroInvocation` Huff contract or any of its imports (there are none in this simple example).
+On line 10 of <a href="./src/InvalidMacroInvocation.huff">InvalidMacroInvocation.huff</a>, we invoke a macro called <code>UNKNOWN</code>, but it doesn't exist in either the <code>InvalidMacroInvocation</code> Huff contract or any of its imports (there are none in this simple example).
 
 Thus, the compiler will generate an error message like so when compiling the contract:
 <p align="center">
@@ -55,7 +55,7 @@ Thus, the compiler will generate an error message like so when compiling the con
 <details>
 <summary>Invalid Macro Statement</summary>
 <br />
-On line 11 of <a href="./src/InvalidMacroStatement.huff">InvalidMacroStatement.huff</a>, we make a call to the `FREE_STORAGE_POINTER()` keyword which is invalid within the context of a macro.
+On line 11 of <a href="./src/InvalidMacroStatement.huff">InvalidMacroStatement.huff</a>, we make a call to the <code>FREE_STORAGE_POINTER()</code> keyword which is invalid within the context of a macro.
 
 Thus, the compiler will generate an error message like so when compiling the contract:
 
