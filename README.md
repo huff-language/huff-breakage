@@ -43,22 +43,25 @@ src
 
 <details>
 <summary>Invalid Macro Invocation</summary>
-
-On line 10 of [InvalidMacroInvocation.huff](./src/InvalidMacroInvocation.huff), we invoke a macro called `UNKNOWN`, but it doesn't exist in either the `InvalidMacroInvocation` Huff contract or any of its imports (there are none in this simple example).
+<br />
+On line 10 of <a href="./src/InvalidMacroInvocation.huff">InvalidMacroInvocation.huff</a>, we invoke a macro called `UNKNOWN`, but it doesn't exist in either the `InvalidMacroInvocation` Huff contract or any of its imports (there are none in this simple example).
 
 Thus, the compiler will generate an error message like so when compiling the contract:
-
-<img src="./assets/invalidmacroinvocation.png">
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/invalidmacroinvocation.png">
+</p>
 </details>
 
 <details>
 <summary>Invalid Macro Statement</summary>
-
-On line 11 of [InvalidMacroStatement.huff](./src/InvalidMacroStatement.huff), we make a call to the `FREE_STORAGE_POINTER()` keyword which is invalid within the context of a macro.
+<br />
+On line 11 of <a href="./src/InvalidMacroStatement.huff">InvalidMacroStatement.huff</a>, we make a call to the `FREE_STORAGE_POINTER()` keyword which is invalid within the context of a macro.
 
 Thus, the compiler will generate an error message like so when compiling the contract:
 
-<img src="./assets/invalidmacrostatement.png">
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/invalidmacrostatement.png">
+</p>
 </details>
 
 
