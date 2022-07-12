@@ -1,6 +1,6 @@
 /// @title Table Builtins
 /// @author Andreas Bigger <https://github.com/abigger87>
-/// @notice Table Builtins should compile!
+/// @notice Table Builtins contain labels with missing definitions
 
 #define jumptable__packed PACKED_JUMPTABLE {
     lab_0 lab_1 lab_2 lab_3
@@ -24,4 +24,10 @@
 // Create the inlined jumptable
 #define macro CONSTRUCTOR() = takes(0) returns (0) {
     BUILTIN_TEST()
+}
+
+// The main entrypoint of the contract
+#define macro MAIN() = takes(0) returns (0) {
+    caller 0x00 mstore
+    0x20 0x00 return
 }

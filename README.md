@@ -35,12 +35,13 @@ src
 ├─ InvalidMacroStatement — An invalid statement in a macro definition
 ├─ MissingConstantDef — A constant definition is missing
 ├─ MissingConstructor — A constructor macro definition is missing [COMPILES]
-├─ TableBuiltins — Table Builtins created on deployment [COMPILES]
+├─ TableBuiltins — Table Builtins created on deployment with missing label definitions
 ├─ UnmatchedJumpLabel — A jump label that has no matching label definition
 ```
 
 ## Examples
 
+_NOTE: Some of the below contracts compile correctly and thus have a `[COMPILES]` postfix_
 
 <details>
 <summary>Invalid Macro Invocation</summary>
@@ -72,6 +73,36 @@ Thus, the compiler will generate an error message like so when compiling the con
 On line 10 of <a href="./src/MissingConstantDef.huff">MissingConstantDef.huff</a>, the constant <code>[UNKNOWN_CONSTANT_DEFINITION]</code> is referenced (the brackets notate the item's location will be pushed to the stack) but there is no <code>UNKNOWN_CONSTANT_DEFINITION</code> definition present in the contract. This will generate an error message similar to below during compilation.
 <p align="center">
 <img height="300px" style="display: block; margin: 0 auto" src="./assets/missingconstantdef.png">
+</p>
+</details>
+
+
+<details>
+<summary>Missing Constructor [COMPILES]</summary>
+<br />
+Since missing constructors are allowed, the <a href="./src/MissingConstructor.huff">MissingConstructor.huff</a> contract will compile correctly, producing the below output:
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/missingconstructor.png">
+</p>
+</details>
+
+
+<details>
+<summary>Table Builtins</summary>
+<br />
+On line 6 of <a href="./src/TableBuiltins.huff">TableBuiltins.huff</a>, the builting table contains references to labels that aren't defined, thus causing this contract to fail to compile.
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/tablebuiltins.png">
+</p>
+</details>
+
+
+<details>
+<summary>Unmatched Jump Labels</summary>
+<br />
+On line 16 of <a href="./src/UnmatchedJumpLabel.huff">UnmatchedJumpLabel.huff</a>, the jump label <code>err</code> is referenced but there is no matching label definition. This will generate the following <code>Unmatched Jump Label</code> error:
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/unmatchedjumplabel.png">
 </p>
 </details>
 
