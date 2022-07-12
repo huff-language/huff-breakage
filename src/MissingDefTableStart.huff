@@ -1,0 +1,21 @@
+/// @title Missing Table Definition For Table Start Builtin
+/// @author Andreas Bigger <https://github.com/abigger87>
+/// @notice Calling __tablestart() on a missing table definition should fail.
+
+#define jumptable STANDARD_JUMPTABLE {}
+
+// Creates a table
+#define macro CONSTRUCT_TABLE() = takes(0) returns(1) {
+    __tablesize(STANDARD_JUMPTABLE) __tablestart(DIFFERENT_TABLE) 0x00 codecopy
+}
+
+// Create the inlined jumptable
+#define macro CONSTRUCTOR() = takes(0) returns (0) {
+    CONSTRUCT_TABLE()
+}
+
+// A mock entrypoint of a contract that returns the caller's address
+#define macro MAIN() = takes(0) returns (0) {
+    caller 0x00 mstore
+    0x20 0x00 return
+}
