@@ -36,6 +36,8 @@ src
 ├─ InvalidMacroStatement — An invalid statement in a macro definition
 ├─ MissingConstantDef — A constant definition is missing
 ├─ MissingConstructor — A constructor macro definition is missing [COMPILES]
+├─ MissingDefTableSize — Table definition used in __tablesize builtin is missing
+├─ MissingDefTableStart — Table definition used in __tablestart builtin is missing
 ├─ TableBuiltins — Table Builtins created on deployment with missing label definitions
 ├─ UnmatchedJumpLabel — A jump label that has no matching label definition
 ```
@@ -94,6 +96,26 @@ On line 10 of <a href="./src/MissingConstantDef.huff">MissingConstantDef.huff</a
 Since missing constructors are allowed, the <a href="./src/MissingConstructor.huff">MissingConstructor.huff</a> contract will compile correctly, producing the below output:
 <p align="center">
 <img height="300px" style="display: block; margin: 0 auto" src="./assets/missingconstructor.png">
+</p>
+</details>
+
+
+<details>
+<summary>Missing Table Definition used in Table Size Builtin</summary>
+<br />
+On line 7 of <a href="./src/MissingDefTableSize.huff">MissingDefTableSize.huff</a>, the table reference <code>STANDARD_JUMPTABLE</code> passed into the <code>__tablesize()</code> builtin is missing. This results in the following error being generated:
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/missingdeftablesize.png">
+</p>
+</details>
+
+
+<details>
+<summary>Missing Table Definition used in Table Start Builtin</summary>
+<br />
+On line 7 of <a href="./src/MissingDefTableStart.huff">MissingDefTableStart.huff</a>, the table reference <code>DIFFERENT_TABLE</code> passed into the <code>__tablestart()</code> builtin is missing. This results in the following error being generated:
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/missingdeftablestart.png">
 </p>
 </details>
 
