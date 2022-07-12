@@ -1,0 +1,11 @@
+# OSX
+.DS_Store
+
+# Foundry
+cache/
+out/
+
+# huffc output
+artifacts/
+
+.vscode

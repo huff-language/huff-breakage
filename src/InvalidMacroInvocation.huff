@@ -1,0 +1,11 @@
+/// @title Invalid Macro Invocation
+/// @author Andreas Bigger <https://github.com/abigger87>
+/// @notice This contract demonstrates an error when a macro invocation is made to a non-existant macro.
+
+// Constructor for demonstrative purposes - Constructor definitions are not required
+#define macro CONSTRUCTOR() = takes(0) returns (0) {}
+
+#define macro MAIN() = takes(0) returns (0) {
+    // This macro invocation will error since a macro with name `UNKNOWN` dne
+    UNKNOWN()
+}
