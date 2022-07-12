@@ -2,7 +2,7 @@
 
 # huff-breakage • [![ci](https://github.com/huff-language/huff-breakage/actions/workflows/ci.yaml/badge.svg)](https://github.com/huff-language/huff-breakage/actions/workflows/ci.yaml) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ![Solidity](https://img.shields.io/badge/solidity-%3E%3D%200.8.13-lightgrey)
 
-A set of **Incorrect**, **Breaking**, and **Footguned** [Huff](https://github.com/huff-language) Contracts.
+A set of **Incorrect**, **Breaking**, and **Footgunned** [Huff](https://github.com/huff-language) Contracts.
 
 ## Overview
 
