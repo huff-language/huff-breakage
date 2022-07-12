@@ -33,7 +33,6 @@ jobs:
           forge --version
           forge build --sizes
         id: build
-        continue-on-failure: true
 
       - name: Run Forge tests
         run: |
