@@ -31,6 +31,7 @@ _NOTE: Some of the below contracts compile correctly and have a `[COMPILES]` pos
 
 ```ml
 src
+├─ InvalidFunctionVisibility — An invalid function visibility specifier
 ├─ InvalidMacroInvocation — An invocation of a macro that doesn't exist
 ├─ InvalidMacroStatement — An invalid statement in a macro definition
 ├─ MissingConstantDef — A constant definition is missing
@@ -42,6 +43,16 @@ src
 ## Explanations
 
 _NOTE: Some of the below contracts compile correctly and thus have a `[COMPILES]` postfix_
+
+<details>
+<summary>Invalid Function Visibility</summary>
+<br />
+Functions in huff can only have the visibility specifiers <code>view</code>, <code>pure</code>, <code>payable</code>, or <code>nonpayable</code>. On line 6 of <a href="./src/InvalidFunctionVisibility.huff">InvalidFunctionVisibility.huff</a>, the function has a specifier <code>internal</code> which is invalid, generating the following error:
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/invalidfunctionvisibility.png">
+</p>
+</details>
+
 
 <details>
 <summary>Invalid Macro Invocation</summary>
@@ -83,6 +94,16 @@ On line 10 of <a href="./src/MissingConstantDef.huff">MissingConstantDef.huff</a
 Since missing constructors are allowed, the <a href="./src/MissingConstructor.huff">MissingConstructor.huff</a> contract will compile correctly, producing the below output:
 <p align="center">
 <img height="300px" style="display: block; margin: 0 auto" src="./assets/missingconstructor.png">
+</p>
+</details>
+
+
+<details>
+<summary>Missing Main Macro Definition</summary>
+<br />
+<a href="./src/MissingMainMacroDefinition.huff">MissingMainMacroDefinition.huff</a> is missing a `MAIN` macro definition which is invalid behavior as the contract needs an entrypoint.
+<p align="center">
+<img height="300px" style="display: block; margin: 0 auto" src="./assets/missingmaindef.png">
 </p>
 </details>
 

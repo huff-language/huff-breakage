@@ -1,0 +1,6 @@
+/// @title Invalid Function Visibility
+/// @author Andreas Bigger <https://github.com/abigger87>
+/// @notice This demonstrates an invalid visibility specifier for a function interface.
+
+// `internal` is an invalid visibility specifier.
+#define function func() internal returns (address)

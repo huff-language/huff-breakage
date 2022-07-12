@@ -1,0 +1,6 @@
+/// @title Missing Main Macro Definition
+/// @author Andreas Bigger <https://github.com/abigger87>
+/// @notice This is a contract that is missing a main macro definition.
+
+// Constructor definition for demonstrative purposes (not required to compile)
+#define macro CONSTRUCTOR() = takes(0) returns (0) {}
